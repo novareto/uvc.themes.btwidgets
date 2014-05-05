@@ -10,11 +10,11 @@ history = open(join('docs', 'HISTORY.txt')).read()
 
 
 install_requires = [
-    'uvc.design.canvas',
-    'zope.interface',
+    'dolmen.forms.ztk',  # this will go inside a conditional import
+    'cromlech.browser',  # Likewise
     'fanstatic',
     'js.bootstrap',
-    'uvclight',
+    'zope.interface',
     ]
 
 
@@ -47,8 +47,5 @@ setup(name=name,
           'Programming Language :: Python',
           ],
       entry_points={
-         'fanstatic.libraries': [
-            'uvc.themes.btwidgets = uvc.themes.btwidgets.resources:library',
-            ],
         }
       )
