@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from dolmen.forms.ztk.widget import object as obj
+from dolmen.forms.ztk.widgets import object as obj
 from uvclight import adapts, name
 from . import getTemplate, IBootstrapRequest
 from zope.interface import Interface

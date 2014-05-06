@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from dolmen.forms.ztk.widget import text
+from dolmen.forms.ztk.widgets import text
 from uvclight import adapts, name
 from . import getTemplate, IBootstrapRequest
 from zope.interface import Interface
@@ -9,6 +9,7 @@ from zope.interface import Interface
 class TextareaWidget(text.TextareaWidget):
     adapts(text.TextField, Interface, IBootstrapRequest)
     template = getTemplate('textareawidget.cpt')
+    defaultHtmlClass = ['field', 'field-text', 'form-control']
 
 
 class DisplayTextareaWidget(TextareaWidget):

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from dolmen.forms.ztk.widget import date
+from dolmen.forms.ztk.widgets import date
 from uvclight import adapts
 from . import IBootstrapRequest
 from zope.interface import Interface
@@ -8,6 +8,7 @@ from zope.interface import Interface
 
 class DateFieldWidget(date.DateFieldWidget):
     adapts(date.DateField, Interface, IBootstrapRequest)
+    defaultHtmlClass = ['field', 'field-date', 'form-control']
 
 
 class DateFieldDisplayWidget(date.DateFieldDisplayWidget):

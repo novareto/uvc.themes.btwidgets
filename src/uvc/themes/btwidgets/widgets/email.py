@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from dolmen.forms.ztk.widget import email
+from dolmen.forms.ztk.widgets import email
 from uvclight import adapts, name
 from . import IBootstrapRequest
 from zope.interface import Interface

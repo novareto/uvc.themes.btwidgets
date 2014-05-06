@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from dolmen.forms.ztk.widget import number
+from dolmen.forms.ztk.widgets import number
 from uvclight import adapts, name
 from . import getTemplate, IBootstrapRequest
 from zope.interface import Interface
@@ -8,6 +8,8 @@ from zope.interface import Interface
 
 class NumberWidget(number.NumberWidget):
     adapts(number.IntegerField, Interface, IBootstrapRequest)
+    template = getTemplate('numberwidget.cpt')
+    defaultHtmlClass = ['field', 'field-number', 'form-control']
 
 
 class CurrencyDisplayWidget(number.CurrencyDisplayWidget):

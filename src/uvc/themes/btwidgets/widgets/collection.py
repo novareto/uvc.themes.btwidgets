@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from dolmen.forms.ztk.widgets import collection as coll
+from dolmen.forms.ztk.widgets import collection as col
 from uvclight import adapts, name
 from . import getTemplate, IBootstrapRequest
 from zope.interface import Interface
@@ -13,9 +13,10 @@ class MultiGenericFieldWidget(col.MultiGenericFieldWidget):
 
 class ListGenericFieldWidget(col.ListGenericFieldWidget):
     adapts(col.ListField, Interface, Interface, IBootstrapRequest)
+    template = getTemplate('multigenericfieldwidget.cpt')
 
 
-class MultiGenericDisplayFieldWidget(col.MultiGenericDisplayFieldWidget):
+class MultiGenericDisplayFieldWidget(MultiGenericFieldWidget):
     name('display')
     template = getTemplate('multigenericdisplayfieldwidget.cpt')
 
@@ -30,13 +31,11 @@ class ListObjectFieldWidget(col.ListObjectFieldWidget):
     template = getTemplate('listobjectfieldwidget.cpt')
 
 
-class RegularMultiObjectFieldWidget(col.RegularMultiObjectFieldWidget):
-    adapts(col.ICollectionField, col.ObjectField, Interface, IBootstrapRequest)
+class RegularMultiObjectFieldWidget(MultiGenericFieldWidget):
     name('input-list')
 
 
-class RegularListObjectFieldWidget(col.RegularListObjectFieldWidget):
-    adapts(col.ListField, col.ObjectField, Interface, IBootstrapRequest)
+class RegularListObjectFieldWidget(ListGenericFieldWidget):
     name('input-list')
 
 

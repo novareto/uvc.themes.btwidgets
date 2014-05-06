@@ -9,6 +9,7 @@ from zope.interface import Interface
 class ChoiceFieldWidget(choice.ChoiceFieldWidget):
     adapts(choice.ChoiceField, Interface, IBootstrapRequest)
     template = getTemplate('choicefieldwidget.cpt')
+    defaultHtmlClass = ['field', 'field-choice', 'form-control']
 
 
 class ChoiceDisplayWidget(ChoiceFieldWidget):
@@ -19,3 +20,4 @@ class ChoiceDisplayWidget(ChoiceFieldWidget):
 class RadioFieldWidget(choice.RadioFieldWidget):
     adapts(choice.ChoiceField, Interface, IBootstrapRequest)
     name('radio')
+    template = getTemplate('radiofieldwidget.cpt')
