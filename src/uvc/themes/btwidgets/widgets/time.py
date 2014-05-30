@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from dolmen.forms.ztk.widgets import time
-from uvclight import adapts, name
-from . import getTemplate, IBootstrapRequest
+from uvclight import adapts
+from . import IBootstrapRequest
 from zope.interface import Interface
 
 

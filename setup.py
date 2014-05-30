@@ -4,17 +4,20 @@ from os.path import join
 from setuptools import setup, find_packages
 
 name = 'uvc.themes.btwidgets'
-version = '0.1-dev'
+version = '0.1'
 readme = open('README.txt').read()
 history = open(join('docs', 'HISTORY.txt')).read()
 
 
 install_requires = [
-    'dolmen.forms.ztk',  # this will go inside a conditional import
-    'cromlech.browser',  # Likewise
+    'cromlech.browser',
+    'dolmen.forms.ztk',
+    'dolmen.template',
+    'uvclight',
+    'zope.interface',
     'fanstatic',
     'js.bootstrap',
-    'zope.interface',
+    'zope.schema',
     ]
 
 
