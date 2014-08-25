@@ -18,6 +18,7 @@ install_requires = [
     'fanstatic',
     'js.bootstrap',
     'zope.schema',
+    'setuptools',
     ]
 
 
