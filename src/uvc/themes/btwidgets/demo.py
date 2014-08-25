@@ -12,6 +12,9 @@ class IDemoWidgets(Interface):
     txtline = schema.TextLine(
         title=u'Text line field')
 
+    password = schema.Password(
+        title=u'Password Field')
+
     integer = schema.Int(
         title=u'Integer field')
 
@@ -42,11 +45,11 @@ class IDemoWidgets(Interface):
     list2 = schema.Set(
         title=u'Set field (normal)',
         value_type=schema.Choice(values=('1', '2', '3')))
-    
+
     list3 = schema.Set(
         title=u'Set multiselect field',
         value_type=schema.Choice(values=('1', '2', '3')))
-    
+
 
 class DemoForm(Form):
     context(Interface)
