@@ -14,4 +14,4 @@ class URIWidget(uri.URIWidget):
 class URIDisplayWidget(uri.URIDisplayWidget):
     adapts(uri.URIField, Interface, IBootstrapRequest)
     name('display')
-    template = getTemplate('uridisplaywidget.pt')
+    template = getTemplate('uridisplaywidget.cpt')
