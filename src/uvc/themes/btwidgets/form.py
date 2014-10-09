@@ -7,13 +7,13 @@ import uvclight
 
 from dolmen.forms.base import interfaces
 from dolmen.forms.base.widgets import ActionWidget
-from uvc.bootstraptheme import IBootstrapThemeRequest
+from uvc.themes.btwidgets import IBootstrapRequest
 from cromlech.browser import ITemplate
 from dolmen.forms.base.interfaces import IForm
 from grokcore.component import adapts, adapter, implementer
 
 
-@adapter(IForm, IBootstrapThemeRequest)
+@adapter(IForm, IBootstrapRequest)
 @implementer(ITemplate)
 def bootstrap_form_template(context, request):
     """default template for the menu"""
@@ -24,7 +24,7 @@ class ActionWidget(ActionWidget):
     adapts(
         interfaces.IAction,
         interfaces.IFieldExtractionValueSetting,
-        IBootstrapThemeRequest)
+        IBootstrapRequest)
 
     def htmlClass(self):
         return "action btn btn-default"
