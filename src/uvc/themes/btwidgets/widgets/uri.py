@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from dolmen.forms.ztk.widgets import uri
-from uvclight import adapts, name
+from grokcore.component import adapts, name
 from . import getTemplate, IBootstrapRequest
 from zope.interface import Interface
 
