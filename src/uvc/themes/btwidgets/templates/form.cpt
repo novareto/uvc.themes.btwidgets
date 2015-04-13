@@ -24,8 +24,8 @@
       </div>
       </div>
     <div class="form-actions" tal:condition="view.actionWidgets">
-      <span class="action" metal:define-macro="action-inline" tal:repeat="widget view.actionWidgets">
-          <tal:widget tal:content="structure widget.render()" />
+      <span class="action" tal:repeat="widget view.actionWidgets">
+          <tal:widget  metal:define-macro="action-inline" tal:content="structure widget.render()" />
       </span>
     </div>
   </fieldset>
