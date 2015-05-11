@@ -3,7 +3,7 @@
 # cklinger@novareto.de
 
 
-import uvclight
+from uvc.api import get_template
 
 from dolmen.forms.base import interfaces
 from dolmen.forms.base.widgets import ActionWidget
@@ -18,14 +18,14 @@ from dolmen.forms.viewlet.interfaces import IInlineForm
 @implementer(ITemplate)
 def bootstrap_form_template(context, request):
     """default template for the menu"""
-    return uvclight.get_template('form.cpt', __file__)
+    return get_template('form.cpt', __file__)
 
 
 @adapter(IInlineForm, IBootstrapRequest)
 @implementer(ITemplate)
 def form_template(context, request):
     """default template for the menu"""
-    return uvclight.get_template('viewletform.cpt', __file__)
+    return get_template('viewletform.cpt', __file__)
 
 
 class ActionWidget(ActionWidget):
