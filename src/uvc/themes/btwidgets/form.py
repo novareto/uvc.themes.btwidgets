@@ -3,29 +3,28 @@
 # cklinger@novareto.de
 
 
-import uvclight
-
-from dolmen.forms.base import interfaces
-from dolmen.forms.base.widgets import ActionWidget
-from uvc.themes.btwidgets import IBootstrapRequest
 from cromlech.browser import ITemplate
+from dolmen.forms.base import interfaces
 from dolmen.forms.base.interfaces import IForm
-from grokcore.component import adapts, adapter, implementer
+from dolmen.forms.base.widgets import ActionWidget
 from dolmen.forms.viewlet.interfaces import IInlineForm
+from grokcore.component import adapts, adapter, implementer
+from uvc.api.api import get_template
+from uvc.themes.btwidgets import IBootstrapRequest
 
 
 @adapter(IForm, IBootstrapRequest)
 @implementer(ITemplate)
 def bootstrap_form_template(context, request):
     """default template for the menu"""
-    return uvclight.get_template('form.cpt', __file__)
+    return get_template('form.cpt', __file__)
 
 
 @adapter(IInlineForm, IBootstrapRequest)
 @implementer(ITemplate)
 def form_template(context, request):
     """default template for the menu"""
-    return uvclight.get_template('viewletform.cpt', __file__)
+    return get_template('viewletform.cpt', __file__)
 
 
 class ActionWidget(ActionWidget):

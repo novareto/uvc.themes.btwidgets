@@ -15,7 +15,6 @@ from zope.interface import Interface
 #    adapts(col.ListField, Interface, Interface, IBootstrapRequest)
 #    template = getTemplate('multigenericfieldwidget.cpt')
 
-
 #class MultiGenericDisplayFieldWidget(MultiGenericFieldWidget):
 #    name('display')
 #    template = getTemplate('multigenericdisplayfieldwidget.cpt')
@@ -25,30 +24,37 @@ from zope.interface import Interface
 #    adapts(col.ICollectionField, col.ObjectField, Interface, IBootstrapRequest)
 #    template = getTemplate('multiobjectfieldwidget.cpt')
 
-
 #class ListObjectFieldWidget(col.ListObjectFieldWidget):
 #    adapts(col.ListField, col.ObjectField, Interface, IBootstrapRequest)
 #    template = getTemplate('listobjectfieldwidget.cpt')
 
-
 #class RegularMultiObjectFieldWidget(MultiGenericFieldWidget):
 #    name('input-list')
 
-
 #class RegularListObjectFieldWidget(ListGenericFieldWidget):
 #    name('input-list')
-
 
 #class MultiChoiceFieldWidget(col.MultiChoiceFieldWidget):
 #    adapts(col.SetField, col.ChoiceField, Interface, IBootstrapRequest)
 #    template = getTemplate('multichoicefieldwidget.cpt')
 
-
 #class MultiSelectFieldWidget(MultiChoiceFieldWidget):
 #    name('multiselect')
 #    template = getTemplate('multiselectfieldwidget.cpt')
 
-
 #class MultiChoiceDisplayFieldWidget(MultiChoiceFieldWidget):
 #    name('display')
 #    template = getTemplate('multichoicedisplayfieldwidget.cpt')
+
+
+class MultiChoiceDisplayFieldWidget(MultiChoiceFieldWidget):
+    name('display')
+    template = getTemplate('multichoicedisplayfieldwidget.cpt')
+
+    def renderableChoice(self):
+        current = self.inputValue()
+        base_id = self.htmlId()
+        for i, choice in enumerate(self.choices()):
+            if choice.token in current:
+                yield {'title': choice.title,
+                       'id': base_id + '-' + str(i)}

@@ -1,11 +1,12 @@
 <div class="field-table field-collection"
      i18n:domain="zeam.form.base">
+
   <p class="field-collection-empty"
      tal:condition="widget.includeEmptyMessage"
      tal:attributes="style python:widget.haveValues and 'display:none' or None">
     -
   </p>
-  <table class="field-collection-header"
+  <table class="field-collection-header table table-condensed"
          tal:attributes="style python:(not widget.haveValues) and 'display:none' or None">
     <thead>
       <tr>
@@ -58,7 +59,8 @@
         </tr>
       </tal:values>
     </tbody>
-  </table>
+</table>
+
   <table class="field-collection-template" style="display: none" rel="#"
          tal:condition="widget.jsonAddIdentifier"
          tal:define="valueWidget widget.jsonAddTemplate"
@@ -66,17 +68,19 @@
     <metal:line metal:use-macro="template.macros.line" />
   </table>
 
+
+
   <input type="hidden" class="field-collection-counter" name="#" value="#"
          tal:attributes="name string:${widget.identifier};
                          value widget.inputValue()" />
   <div class="multi-actions">
     <input type="submit" name="#" value="Add"
-           class="field-collection-add-line"
+           class="field-collection-add-line btn btn-primary"
            tal:attributes="name string:${widget.identifier}.add"
            tal:condition="widget.allowAdding"
            i18n:attributes="value" />
     <input type="submit" name="#" value="Remove"
-           class="field-collection-remove-line"
+           class="field-collection-remove-line btn"
            tal:attributes="name string:${widget.identifier}.remove;
                            style python:(not widget.haveValues) and 'display:none' or None"
            tal:condition="widget.allowRemove"

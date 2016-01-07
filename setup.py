@@ -11,14 +11,13 @@ history = open(join('docs', 'HISTORY.txt')).read()
 
 install_requires = [
     'cromlech.browser',
-    'dolmen.forms.ztk',
     'dolmen.template',
-    'uvclight',
-    'zope.interface',
     'fanstatic',
     'js.bootstrap',
-    'zope.schema',
     'setuptools',
+    'uvc.api',
+    'zope.interface',
+    'zope.schema',
     ]
 
 
