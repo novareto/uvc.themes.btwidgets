@@ -6,10 +6,10 @@ from . import getTemplate, IBootstrapRequest
 from zope.interface import Interface
 
 
-class ObjectFieldWidget(obj.FieldWidget):
-    adapts(obj.ObjectField, Interface, IBootstrapRequest)
-    template = getTemplate('objectfieldwidget.cpt')
+#class ObjectFieldWidget(obj.FieldWidget):
+#    adapts(obj.ObjectField, Interface, IBootstrapRequest)
+#    template = getTemplate('objectfieldwidget.cpt')
 
 
-class ObjectDisplayWidget(ObjectFieldWidget):
-    name('display')
+#class ObjectDisplayWidget(ObjectFieldWidget):
+#    name('display')
