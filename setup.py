@@ -4,7 +4,7 @@ from os.path import join
 from setuptools import setup, find_packages
 
 name = 'uvc.themes.btwidgets'
-version = '0.5'
+version = '0.6.dev0'
 readme = open('README.txt').read()
 history = open(join('docs', 'HISTORY.txt')).read()
 
