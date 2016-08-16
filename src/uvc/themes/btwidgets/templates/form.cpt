@@ -10,7 +10,8 @@
 
   <fieldset metal:define-macro="form-fieldset">
     <legend tal:condition="hasattr(view, 'legend')" tal:content="view.legend"> </legend>
-    <div class="form-group" tal:condition="view.fieldWidgets">
+    <div class="form-group" tal:condition="view.fieldWidgets"
+      metal:define-macro="form-group">
       <tal:widgets repeat="widget view.fieldWidgets">
 	<div class="form-group"
              tal:condition="widget.isVisible()"
@@ -27,7 +28,8 @@
 	</div>
       </tal:widgets>
     </div>
-    <div class="form-actions" tal:condition="view.actionWidgets">
+    <div class="form-actions" tal:condition="view.actionWidgets"
+      metal:define-macro="form-action">
       <span class="action" tal:repeat="widget view.actionWidgets">
           <tal:widget  metal:define-macro="action-inline" tal:content="structure widget.render()" />
       </span>
