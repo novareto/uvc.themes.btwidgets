@@ -14,9 +14,8 @@
       metal:define-macro="form-group">
       <tal:widgets repeat="widget view.fieldWidgets">
 	<div class="form-group"
-             tal:condition="widget.isVisible()"
              tal:attributes="id 'field-' + widget.htmlId();
-	                     class widget.error and 'form-group error' or 'form-group'">
+	                     class widget.error and 'form-group has-error' or 'form-group'">
 	  <label class="control-label" for="#" tal:attributes="for widget.htmlId()"> 
             <span tal:content="widget.title"> </span> <span tal:condition="widget.required"> * </span> 
 	  </label>
